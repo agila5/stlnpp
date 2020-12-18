@@ -1,7 +1,7 @@
 #' @import spatstat
 #' @import stats
 #' @export
-density.stlpp <- function(x,lbw,tbw,at=c("points","pixels"),dimt=512,...){
+density.stlpp <- function(x,lbw,tbw,at=c("points","pixels"),dimt=512,..., linnet_sparse = FALSE)){
   
   if (!inherits(x, "stlpp")) stop("x should an object of class stlpp")
   
@@ -31,7 +31,7 @@ density.stlpp <- function(x,lbw,tbw,at=c("points","pixels"),dimt=512,...){
   }
   ############################################## space intensity
   
-  pX <- as.lpp.stlpp(x)
+  pX <- as.lpp.stlpp(x, linnet_sparse = linnet_sparse)
   if (missing(lbw)) lbw <- bw.scott.iso(pX)
   
   if(at=="points"){
