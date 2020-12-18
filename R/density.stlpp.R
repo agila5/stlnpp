@@ -1,7 +1,7 @@
 #' @import spatstat
 #' @import stats
 #' @export
-density.stlpp <- function(x,lbw,tbw,at=c("points","pixels"),dimt=512,..., linnet_sparse = FALSE)){
+density.stlpp <- function(x,lbw,tbw,at=c("points","pixels"),dimt=512,..., linnet_sparse = FALSE){
   
   if (!inherits(x, "stlpp")) stop("x should an object of class stlpp")
   
